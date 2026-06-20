@@ -3,64 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой Сайт</title>
+    <title>ФОТО ПОТОК - Пакетный генератор</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">МойСайт</div>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="header">
+        <div class="logo">✦ ФОТО ПОТОК</div>
+        <div class="status">● API Активен</div>
+    </div>
 
-    <section id="home" class="hero">
-        <h1>Добро пожаловать на наш сайт!</h1>
-        <p>Это готовый скелет, который мы можем развивать вместе.</p>
-        <button onclick="showAlert()">Начать работу</button>
-    </section>
-
-    <section id="about">
-        <h2>О нас</h2>
-        <p>Здесь будет информация о вашем проекте или компании. Расскажи мне, что нужно написать.</p>
-    </section>
-
-    <section id="services">
-        <h2>Услуги</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Услуга 1</h3>
-                <p>Описание первой услуги.</p>
+    <div class="main-container">
+        <div class="upload-section">
+            <h2>Исходные фото</h2>
+            <div id="drop-zone" class="drop-zone">
+                <div class="upload-icon">↑</div>
+                <p>Перетащите фото сюда</p>
+                <p class="small">или нажмите для выбора</p>
+                <input type="file" id="file-input" multiple accept="image/*" hidden>
             </div>
-            <div class="service-card">
-                <h3>Услуга 2</h3>
-                <p>Описание второй услуги.</p>
-            </div>
-            <div class="service-card">
-                <h3>Услуга 3</h3>
-                <p>Описание третьей услуги.</p>
-            </div>
+            <div id="file-list" class="file-list"></div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Контакты</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Ваше сообщение" required></textarea>
-            <button type="submit">Отправить</button>
-        </form>
-    </section>
+        <div class="prompt-section">
+            <h2>Промпт и Генерация</h2>
+            <textarea id="prompt" rows="7" placeholder="Опишите, что хотите сделать с фото..."></textarea>
+            
+            <button id="process-btn" class="process-button">Генерировать через Flux</button>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 МойСайт. Все права защищены.</p>
-    </footer>
+        <div class="result-section">
+            <h2>Результаты</h2>
+            <div id="results" class="results-area"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
